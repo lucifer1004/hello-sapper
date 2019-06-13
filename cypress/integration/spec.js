@@ -8,12 +8,12 @@ describe('Sapper template app', () => {
 	});
 
 	it('navigates to /about', () => {
-		cy.get('nav a').contains('about').click();
+		cy.get('nav a').contains('关于我们').click();
 		cy.url().should('include', '/about');
 	});
 
 	it('navigates to /blog', () => {
-		cy.get('nav a').contains('blog').click();
+		cy.get('nav a').contains('博客').click();
 		cy.url().should('include', '/blog');
 	});
 });

@@ -16,7 +16,7 @@ const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && w
 export default {
 	client: {
 		input: config.client.input(),
-		output: config.client.output(),
+		output: {...config.client.output(), sourcemap: dev},
 		plugins: [
 			replace({
 				'process.browser': true,
@@ -57,7 +57,7 @@ export default {
 
 	server: {
 		input: config.server.input(),
-		output: config.server.output(),
+		output: {...config.server.output(), sourcemap: dev},
 		plugins: [
 			replace({
 				'process.browser': false,
@@ -79,7 +79,7 @@ export default {
 
 	serviceworker: {
 		input: config.serviceworker.input(),
-		output: config.serviceworker.output(),
+		output: {...config.serviceworker.output(), sourcemap: dev},
 		plugins: [
 			resolve(),
 			replace({
