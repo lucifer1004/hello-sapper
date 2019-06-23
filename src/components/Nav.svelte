@@ -32,6 +32,10 @@
     display: inline-block;
   }
 
+  .unselected:hover {
+    background-color: beige;
+  }
+
   .selected::after {
     position: absolute;
     content: '';
@@ -72,6 +76,11 @@
     <li>
       <a class={segment === 'about' ? 'selected' : 'unselected'} href="about">
         关于我们
+      </a>
+    </li>
+    <li>
+      <a class={segment === 'joinus' ? 'selected' : 'unselected'} href="joinus">
+        招贤纳士
       </a>
     </li>
   </ul>
